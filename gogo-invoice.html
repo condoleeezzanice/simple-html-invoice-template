@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>GOGO Cannabiz</title>
     
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap');
+
     .invoice-box {
         max-width: 800px;
         margin: auto;
@@ -13,7 +15,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, .15);
         font-size: 16px;
         line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
         color: #555;
     }
     
@@ -63,6 +65,11 @@
     .invoice-box table tr.item.last td {
         border-bottom: none;
     }
+
+    .invoice-box table tr.subtotal td:nth-child(2) {
+        border-bottom: 2px solid #eee;
+        padding-top: 20px;
+    }
     
     .invoice-box table tr.total td:nth-child(2) {
         border-top: 2px solid #eee;
@@ -99,46 +106,60 @@
     </style>
 </head>
 
+
+
 <body>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">
-                            </td>
-                            
-                            <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2015<br>
-                                Due: February 1, 2015
-                            </td>
-                        </tr>
-                    </table>
+              
+
+
+            <tr>
+                <td class="title"><img src="https://images.squarespace-cdn.com/content/v1/5d1d03d725be8e000115cc3a/1565040890791-I97RTKECQ4IGASMGWYAS/ke17ZwdGBToddI8pDm48kJda9lm2aBzfVC7XHR2-l6x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTrFgPW3VnRp5iuuJFy_92UrpuasCyfNX0JdWpMA4HHNOpYghpI-Ha_TwZsqqmJXng/GOGO-logo.png?format=750w" style="width: 150px; max-width: 300px; height: 88px;" /></td>
+                <td>
+                <p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span>Order ID: <strong>{{{order_id}}}&nbsp;</strong><br />
+                Order Placed: <strong>{{{date}}}</strong><br />
+                Delivery Method:&nbsp;<strong>{{{DELIVERY_METHOD}}}</strong></span></span></span></p>
+
+                <p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span>Total Amount Due Upon Delivery:&nbsp;</span></span><strong><span style="color:#c0392b;"><span style="font-family:Tahoma,Geneva,sans-serif;">{{{curreny_symbol}}}{{{total_amount}}}</span></span></strong></span></p>
                 </td>
             </tr>
-            
+
             <tr class="information">
                 <td colspan="2">
                     <table>
                         <tr>
                             <td>
-                                Sparksuite, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, CA 12345
+                                <strong>SELLER:</strong><br>
+                                {{{restaurant_name}}}<br>
+                                {{{restaurant_display_address}}}
                             </td>
                             
                             <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
+                                <strong>BUYER:</strong><br>
+                                {{{delivery_address}}}
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
+                        <tr style="background-color:#eee;">
+                            <td class="title">
+                                <img src="https://nuprologistics.com/wp-content/uploads/2020/04/NuPro-Logo-2-e1586208750721.png" style="width:100%; max-width:300px;">
+                            </td>
+                            
+                            <td>
+                                <strong>TRANSPORT COMPANY</strong><br>
+                                NuPro Logistcs (TAAA-41DN,8LBN)<br>
+                                PH: (405) 601-3421<br>
+                            </td>
+                        </tr>
+                 
+                </td>
+            </tr>
+            <tr style="height: 50px; color: #fff;"></tr>
             
             <tr class="heading">
                 <td>
@@ -146,17 +167,17 @@
                 </td>
                 
                 <td>
-                    Check #
+                    Sales Rep
                 </td>
             </tr>
             
             <tr class="details">
                 <td>
-                    Check
+                    {{{payment_by}}}
                 </td>
                 
                 <td>
-                    1000
+                    {{{user_name}}}
                 </td>
             </tr>
             
@@ -166,45 +187,60 @@
                 </td>
                 
                 <td>
-                    Price
+                  Price
                 </td>
             </tr>
             
             <tr class="item">
                 <td>
-                    Website design
+                    {{{item_details_with_category}}}
                 </td>
                 
                 <td>
-                    $300.00
+                   
                 </td>
             </tr>
             
             <tr class="item">
                 <td>
-                    Hosting (3 months)
+                    {{{item_details_with_category}}}
                 </td>
                 
                 <td>
-                    $75.00
+                 
                 </td>
             </tr>
             
             <tr class="item last">
                 <td>
-                    Domain name (1 year)
+                    {{{item_details_with_category}}}
                 </td>
                 
                 <td>
-                    $10.00
+             
                 </td>
             </tr>
+            <tr class="subtotal">
+                <td></td>
+                
+                <td>
+                   Subtotal: {{{subtotal}}}
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                
+                <td>
+                   Discount: {{{discount_row}}}
+                </td>
+            </tr>
+         
             
             <tr class="total">
                 <td></td>
                 
                 <td>
-                   Total: $385.00
+                   Total: {{{total_amount}}}
                 </td>
             </tr>
         </table>

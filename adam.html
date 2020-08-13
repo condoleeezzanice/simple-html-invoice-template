@@ -1,0 +1,109 @@
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">.invoice-box {        max-width: 800px;        margin: auto;        padding: 30px;        border: 1px solid #eee;        box-shadow: 0 0 10px rgba(0, 0, 0, .15);        font-size: 16px;        line-height: 24px;        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;        color: #555;    }        .invoice-box table {        width: 100%;        line-height: inherit;        text-align: left;    }        .invoice-box table td {        padding: 5px;        vertical-align: top;    }        .invoice-box table tr td:nth-child(2) {        text-align: right;    }        .invoice-box table tr.top table td {        padding-bottom: 20px;    }        .invoice-box table tr.top table td.title {        font-size: 45px;        line-height: 45px;        color: #333;    }        .invoice-box table tr.information table td {        padding-bottom: 40px;    }        .invoice-box table tr.heading td {        background: #eee;        border-bottom: 1px solid #ddd;        font-weight: bold;    }        .invoice-box table tr.details td {        padding-bottom: 20px;    }        .invoice-box table tr.item td{        border-bottom: 1px solid #eee;    }        .invoice-box table tr.item.last td {        border-bottom: none;    }        .invoice-box table tr.total td:nth-child(2) {        border-top: 2px solid #eee;        font-weight: bold;    }        @media only screen and (max-width: 600px) {        .invoice-box table tr.top table td {            width: 100%;            display: block;            text-align: center;        }                .invoice-box table tr.information table td {            width: 100%;            display: block;            text-align: center;        }    }        /** RTL **/    .rtl {        direction: rtl;        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;    }        .rtl table {        text-align: right;    }        .rtl table tr td:nth-child(2) {        text-align: left;    }
+</style>
+<div class="invoice-box">
+<table cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr class="top">
+			<td colspan="2">
+			<table>
+				<tbody>
+					<tr>
+						<td class="title"><img src="https://images.squarespace-cdn.com/content/v1/5d1d03d725be8e000115cc3a/1565040890791-I97RTKECQ4IGASMGWYAS/ke17ZwdGBToddI8pDm48kJda9lm2aBzfVC7XHR2-l6x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTrFgPW3VnRp5iuuJFy_92UrpuasCyfNX0JdWpMA4HHNOpYghpI-Ha_TwZsqqmJXng/GOGO-logo.png?format=750w" style="width: 150px; max-width: 300px; height: 88px;" /></td>
+						<td>
+						<p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span style="font-family:Tahoma,Geneva,sans-serif;">Order ID: <strong>{{{order_id}}}&nbsp;</strong><br />
+						Order Placed: <strong>{{{date}}}</strong><br />
+						Delivery Method:&nbsp;<strong>{{{DELIVERY_METHOD}}}</strong></span></span></span></p>
+
+						<p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span style="font-family:Tahoma,Geneva,sans-serif;">Total Amount Due Upon Delivery:&nbsp;</span></span><strong><span style="color:#c0392b;"><span style="font-family:Tahoma,Geneva,sans-serif;">{{{curreny_symbol}}}{{{total_amount}}}</span></span></strong></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr class="information">
+			<td colspan="2">
+			<table>
+				<tbody>
+					<tr>
+						<td style="width: 50%; height: 8px; border-color: rgb(0, 174, 77);">
+						<p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span style="font-family:Tahoma,Geneva,sans-serif;">Seller::<br />
+						<strong>{{{restaurant_name}}}</strong></span></span></span><br />
+						<span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:16px;"><span style="color:#7f8c8d;"><strong>{{{restaurant_display_address}}}&nbsp;</strong></span></span><span style="font-size:18px;"><span style="color:#7f8c8d;"><strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></span></span></span><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#7f8c8d;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></span><a href="https://drive.google.com/drive/folders/1JrMvnj9GOmvq761N0qRivdDbiXFFUMY3?usp=sharing"><span style="color:#e67e22;">OMMA Licensing &amp; Product Testing</span></a></span></span></p>
+
+						<p>&nbsp;</p>
+						</td>
+						<td style="border-color: rgb(0, 174, 77); width: 50%; height: 8px;">
+						<p><span style="font-size:16px;"><span style="color:#7f8c8d;"><span style="font-family:Tahoma,Geneva,sans-serif;">Buyer:</span><br />
+						<strong><span style="font-family:Tahoma,Geneva,sans-serif;">{{{delivery_address}}}</span></strong></span></span></p>
+
+						<p>&nbsp;</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div style="background:#7f8c8d;border:3px solid #41606f;padding:5px 10px;">
+			<p><strong><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">Transport Company:</span></span></span></strong></p>
+
+			<p><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">NuPro Logistcs (TAAA-41DN,8LBN)&nbsp; </span></span></span><strong><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img alt="" src="https://nuprologistics.com/wp-content/uploads/2020/04/NuPro-Logo-2-e1586208750721.png" style="float: right; width: 250px; height: 86px;" /></span></span></span></strong></p>
+
+			<p><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">PH: (405) 601-3421</span></span></span></p>
+			</div>
+
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr class="heading">
+			<td style="background-color: rgb(0, 174, 77);"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">Payment Method</span></span></span></td>
+			<td style="background-color: rgb(0, 174, 77);"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#ffffff;">Sales Rep</span></span></span></td>
+		</tr>
+		<tr class="details">
+			<td><span style="color:#7f8c8d;"><span style="font-size:18px;"><span style="font-family:Tahoma,Geneva,sans-serif;">{{{payment_by}}}</span></span></span></td>
+			<td><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:18px;"><span style="color:#7f8c8d;">{{{user_name}}}</span></span></span></td>
+		</tr>
+		<tr class="heading">
+			<td style="background-color: rgb(0, 174, 77);"><span style="font-size:18px;"><span style="color:#ffffff;">Item</span></span></td>
+			<td style="background-color: rgb(0, 174, 77); text-align: left;"><span style="font-size:18px;"><span style="color:#ffffff;">Price</span></span></td>
+		</tr>
+		<tr class="item">
+			<td>{{{item_details_with_category}}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr class="item">
+			<td>&nbsp;</td>
+			<td><span style="font-size:16px;"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="color:#7f8c8d;">Subtotal:&nbsp;{{{subtotal}}}</span></span></span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr class="item last">
+			<td>&nbsp;</td>
+			<td><span style="color:#7f8c8d;"><span style="font-size:16px;"><span style="font-family:Tahoma,Geneva,sans-serif;">Discount:&nbsp;{{{discount_row}}}</span></span></span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+		<tr class="total">
+			<td>&nbsp;</td>
+			<td><span style="color:#7f8c8d;"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:16px;">Total: </span></span></span><strong><span style="color:#c0392b;"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="font-size:16px;">{{{total_amount}}}</span></span></span></strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size:16px;"><span style="font-family:Tahoma,Geneva,sans-serif;"><span style="color:#7f8c8d;">Term &amp; Conditions:&nbsp;</span></span></span></p>
+</div>
